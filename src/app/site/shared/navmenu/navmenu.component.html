@@ -1,0 +1,67 @@
+<div class="container-expand-sm  bg-dark navbar-dark ">
+  <div class="row ">
+
+    <div class="col-sm-2" id="myprono">
+      <span>PRONOWEB</span>
+    </div>
+    <div class="col-sm-8" id="mynav1">
+      <div class="panel">
+        <nav class="navbar navbar-expand-sm  bg-dark navbar-dark  justify-content-center "  id="mynav">
+          <ul class="navbar-nav ">
+            <li class="nav-item ">
+              <a class="nav-link text-white " routerLink="/">
+                <mat-icon>home</mat-icon>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="pronostics">PRONOSTICS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="resultats">RESULTATS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="classements">CLASSEMENTS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" routerLink="evenements">EVENEMENTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" routerLink="concours">CONCOURS</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="admin">GESTION</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="actors">EQUIPES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="scales">BAREMES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="players">JOUEURS</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="col navbar-nav"  id="classconn">
+        <div class="panel panel-dark ">
+            <nav class="navbar navbar-expand-sm  navbar-dark">
+                <ul class="navbar-nav" id="conn">
+                    <li class="nav-item" >
+                      <a class="nav-link text-white" title="login" routerLink="login">
+                        <mat-icon>account_circle</mat-icon>
+                      </a>
+                    </li>
+                    <li class="nav-item ">
+                        <button style="height:35px" mat-button (click)="logout()" class="nav-link text-white" title="déconnexion">
+                          <mat-icon style="height:20px">exit_to_app</mat-icon>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+  </div>
+
+</div>

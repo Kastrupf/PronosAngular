@@ -1,0 +1,212 @@
+<h6 style="color: white"><a routerLink="/">Home</a> > pronostics </h6>
+<div class="container">
+  <div class="row">
+
+    <div class="col"></div>
+    <div class="col-sm-8" id="mainProno">
+
+
+
+
+      <mat-card class="entete" style="background-color: darkslategray">
+        <mat-card-header>
+          <!-- <mat-card-title>Prochains pronostics</mat-card-title> -->
+          Prochains pronostics
+        </mat-card-header>
+      </mat-card>
+      <mat-card id="card-home">
+        <mat-card class="event-card">
+          <h6>Football : coupe du monde</h6>
+          <mat-card-content>
+            <table class="table table-dark table-striped" class="col">
+              <tbody>
+                <!-- <tr>
+                  <td class="date">30/8/2018</td>
+                  <td>18h30</td>
+                  <td>1/8 de finale</td>
+                  <td>Brésil-Pérou</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">
+                      access_time
+                      </i>
+                    <div>1h23</div>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="date">26/8/2018</td>
+                  <td>20h30</td>
+                  <td>Match de poule</td>
+                  <td>France-Allemagne</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">
+                      access_time
+                      </i>
+                    <div>2h30</div>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="date">25/8/2018</td>
+                  <td>17h30</td>
+                  <td>Match de poule</td>
+                  <td>Japon-Nigéria</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">
+                      access_time
+                      </i>
+                    <div>3h40</div>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="date">24/8/2018</td>
+                  <td>17h30</td>
+                  <td>Match de poule</td>
+                  <td>Espagne-Allemangne</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">
+                      access_time
+                      </i>
+                    <div>3h30</div>
+                    </td>
+                </tr> -->
+                <tr *ngFor="let elt of evts">
+                  <td>{{elt.date}}</td>
+                  <td>{{elt.heure}}</td>
+                  <td>{{elt.niveau}}</td>
+                  <td>{{elt.list_acteurs[0].nom | uppercase}}-{{elt.list_acteurs[1].nom | uppercase}}</td>
+                  <!-- <td><button mat-button style="float:right">Pronostiquer</button></td> -->
+                  <td><button class="col" mat-button
+                      style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">access_time</i></td>
+                  <td class="chrono">{{elt.chrono}}</td>
+                  <!-- <td>
+                    <div>
+                      <label for="">Score</label>
+                      <input  style="width: 30px;height: 20px;margin-left: 5px" type="number">
+                    </div>
+                  </td> -->
+                </tr>
+                <tr>
+                  <td colspan="6">
+                    <h6>Rugby : coupe du Monde</h6>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="date">30/8/2018</td>
+                  <td>18h30</td>
+                  <td>1/8 de finale</td>
+                  <td>NZ-Australie</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">access_time</i></td>
+                  <td class="chrono">-4h30</td>
+                </tr>
+                <tr>
+                  <td class="date">30/8/2018</td>
+                  <td>20h30</td>
+                  <td>1/8 de finale</td>
+                  <td>France-Argentine</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">access_time</i></td>
+                  <td class="chrono">-6h25</td>
+                </tr>
+                <tr>
+                  <td class="date">30/8/2018</td>
+                  <td>20h30</td>
+                  <td>1/8 de finale</td>
+                  <td>France-Argentine</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">access_time</i></td>
+                  <td class="chrono">-7h50</td>
+                </tr>
+                <tr>
+                  <td class="date">30/8/2018</td>
+                  <td>18h30</td>
+                  <td>1/8 de finale</td>
+                  <td>NZ-Australie</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons"> access_time</i></td>
+                  <td class="chrono">-1j/4h30</td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-card-content>
+        </mat-card>
+
+
+
+        <!-- <mat-card class="event-card">
+          <h6>Rugby : coupe du Monde</h6>
+          <mat-card-content>
+
+            <table class="table table-dark table-striped" class="col">
+              <tbody>
+                <tr>
+                  <td class="date">30/8/2018</td>
+                  <td>18h30</td>
+                  <td>1/8 de finale</td>
+                  <td>NZ-Australie</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">
+                      access_time
+                      </i>
+                    <div>3h50</div>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="date">30/8/2018</td>
+                  <td>20h30</td>
+                  <td>1/8 de finale</td>
+                  <td>France-Argentine</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">
+                      access_time
+                      </i>
+                    <div>6h25</div>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="date">30/8/2018</td>
+                  <td>20h30</td>
+                  <td>1/8 de finale</td>
+                  <td>France-Argentine</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">
+                      access_time
+                      </i>
+                    <div>7h50</div>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="date">30/8/2018</td>
+                  <td>18h30</td>
+                  <td>1/8 de finale</td>
+                  <td>NZ-Australie</td>
+                  <td><button mat-button style="float:right;background-color: darkslategray">Pronostiquer</button></td>
+                  <td class="heure"><i class="material-icons">
+                      access_time
+                      </i>
+                    <div>1j-4h30</div>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-card-content>
+        </mat-card>-->
+      </mat-card>
+
+        <div>
+          <button mat-button style="float:left;background-color: brown;margin: 30px" (click)="testObs()" >test_Observable</button>
+        </div>
+        <div>
+          <button mat-button style="float:center;background-color: burlywood;margin: 30px" (click)="testtimeOut()" >test_Observable</button>
+        </div>
+
+    </div>
+    <div class="col"></div>
+    <!-- <app-my-modal></app-my-modal> -->
+    <!-- <div class="col" style="margin-top: 10px">     
+         <app-classement></app-classement> -->
+    <!-- </div>  -->
+
+  </div>
+
+</div>

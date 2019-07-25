@@ -1,0 +1,65 @@
+<h6 style="color: white"><a routerLink="/">Home</a> > Classements</h6>
+<div class="container" style="margin-top: 30px">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-sm-8">
+        <mat-card class="entete" style="background-color: darkslategray">
+            <mat-card-header>
+                <h6>Classement</h6>
+            </mat-card-header>
+
+            <mat-card-content>
+                <table class="table table-dark table-striped">
+                  <thead>
+                      <tr>
+                        <th>Rang</th>
+                        <th>Participants</th>
+                        <th>Points</th>
+                      </tr>
+                  </thead>
+                    <tbody>
+
+                      <tr>
+                        <td>1</td>
+                        <td>Joueur1</td>
+                        <td>102</td>
+                        <td><i  [ngStyle]="{'color':'greenyellow'}" class="material-icons">
+                            arrow_upward
+                            </i></td>
+                      </tr>
+                      <tr>
+                          <td>2</td>
+                          <td>Joueur2</td>
+                          <td>98</td>
+                          <td><i  [ngStyle]="{'color':'red'}" class="material-icons">
+                              arrow_downward
+                              </i></td>
+                      </tr>
+                      <tr>
+                          <td>3</td>
+                          <td>Joueur3</td>
+                          <td>95</td>
+                          <td><i class="material-icons">
+                              drag_handle
+                              </i></td>
+                      </tr>
+                      <tr>
+                          <td>4</td>
+                          <td>Joueur4</td>
+                          <td>93</td>
+                          <td><i  [ngStyle]="{'color':'greenyellow'}" class="material-icons">
+                              arrow_upward
+                              </i></td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </mat-card-content>
+          </mat-card>
+    </div>
+    <div class="col">
+    </div>
+
+  </div>
+
+</div>

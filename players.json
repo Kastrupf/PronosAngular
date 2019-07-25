@@ -1,0 +1,16 @@
+{
+  "players": [
+      {
+          "id": 1,
+          "firstName": "DummyPrenon",
+          "lastName": "DummyNom",
+          "mail": "dummy@email.com"
+      },
+      {
+          "id": 2,
+          "firstName": "DadaPrenon",
+          "lastName": "DadaNom",
+          "mail": "dada@email.com"
+      }
+    ]
+  }

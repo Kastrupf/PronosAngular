@@ -1,0 +1,89 @@
+{
+    "evenements": [
+        {
+            "type": "football",
+            "date": "30/6/2018",
+            "heure": "17h30",
+            "list_acteurs": [
+                {
+                    "id": 1,
+                    "nom": "Bresil"
+                },
+                {
+                    "id": 2,
+                    "nom": "France"
+                }
+            ],
+            "niveau": "demi-finale",
+            "chrono":"-1h30"
+        },
+        {
+            "type": "football",
+            "date": "30/6/2018",
+            "heure": "20h30",
+            "list_acteurs": [
+                {
+                    "id": 3,
+                    "nom": "Sénégal"
+                },
+                {
+                    "id": 4,
+                    "nom": "Argentine"
+                }
+            ],
+            "niveau": "Match de poule",
+            "chrono":"-1h45"
+        },
+        {
+            "type": "football",
+            "date": "1/7/2018",
+            "heure": "17h",
+            "list_acteurs": [
+                {
+                    "id": 5,
+                    "nom": "Angleterre"
+                },
+                {
+                    "id": 6,
+                    "nom": "Espagne"
+                }
+            ],
+            "niveau": "Demi-finale",
+            "chrono":"-2h00"
+        },
+        {
+            "type": "football",
+            "date": "02/7/2018",
+            "heure": "20h30",
+            "list_acteurs": [
+                {
+                    "id": 7,
+                    "nom": "Russie"
+                },
+                {
+                    "id": 8,
+                    "nom": "Belgique"
+                }
+            ],
+            "niveau": "demi-finale",
+            "chrono":"-2h45"
+        },
+        {
+            "type": "football",
+            "date": "12/9/2018",
+            "heure": "15h30",
+            "list_acteurs": [
+                {
+                    "id": 9,
+                    "nom": "Maroc"
+                },
+                {
+                    "id": 10,
+                    "nom": "Argentine"
+                }
+            ],
+            "niveau": "1/4 de finale",
+            "chrono":"-3h15"
+        }
+    ]
+}

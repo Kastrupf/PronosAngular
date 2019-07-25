@@ -1,0 +1,215 @@
+<a routerLink="/"><h6 style="color: white">Home</h6></a>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-sm-7 " id="magrid">
+
+      <mat-grid-list cols="2">
+        <mat-grid-tile>
+            <a routerLink="pronostics">
+                <img  src="../../../assets/Media/images/terrain.jpg" style="height: 150px;width: 150px"  class="rounded">
+                <p style="color: white">Pronostics</p>
+            </a>
+          <!-- <mat-card class="entete">
+            <mat-card-header>
+              <mat-card-title>Pronostics</mat-card-title>
+            </mat-card-header> -->
+            <!-- <mat-card-content>
+                <a routerLink="pronostics">
+                    <img  src="https://via.placeholder.com/200x200/0000FF/808080 ?Text=Digital.com" class="rounded-circle">
+                </a>
+            </mat-card-content> -->
+            <!-- <mat-card-footer>
+              <mat-card-subtitle>Pronostics</mat-card-subtitle>
+            </mat-card-footer> -->
+            <!-- <mat-card-actions>
+              <a routerLink="pronostics"><button mat-raised-button color="info">Pronostics</button></a>
+            </mat-card-actions> -->
+          <!-- </mat-card> -->
+        </mat-grid-tile>
+        <mat-grid-tile>
+                <a routerLink="resultats">
+                    <img  src="../../../assets/Media/images/result2.jpg" style="height: 150px;width: 150px" class="rounded">
+                    <p style="color: white">Résultats</p>
+                </a>
+            <!-- <mat-card class="entete"> -->
+                <!-- <mat-card-header>
+                  <mat-card-title>Pronostics</mat-card-title>
+                </mat-card-header> -->
+                <!-- <mat-card-content>
+                    <a routerLink="resultats">
+                        <img  src="https://via.placeholder.com/200x200/FF0000/FFFFFF?Text=Down.com" class="rounded">
+                    </a>
+                </mat-card-content> -->
+                <!-- <mat-card-footer>
+                  <mat-card-subtitle>Pronostics</mat-card-subtitle>
+                </mat-card-footer> -->
+                <!-- <mat-card-actions>
+                  <a routerLink="resultats"><button mat-raised-button color="info">Résultats</button></a>
+                </mat-card-actions>
+              </mat-card> -->
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <a routerLink="classements">
+                <img  src="../../../assets/Media/images/how-stats.png" style="height: 150px;width: 150px" class="rounded">
+                <p style="color: white">Classements</p>
+            </a>
+            <!-- <mat-card class="entete"> -->
+                <!-- <mat-card-header>
+                  <mat-card-title>Pronostics</mat-card-title>
+                </mat-card-header> -->
+                <!-- <mat-card-content>
+                    <a routerLink="#">
+                        <img  src="https://via.placeholder.com/200x200" class="rounded">
+                    </a>
+
+                </mat-card-content> -->
+                <!-- <mat-card-footer>
+                  <mat-card-subtitle>Pronostics</mat-card-subtitle>
+                </mat-card-footer> -->
+                <!-- <mat-card-actions>
+                  <a routerLink="#"><button mat-raised-button color="info">Classements</button></a>
+                </mat-card-actions>
+              </mat-card> -->
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <a routerLink="evenements">
+                <img  src="../../../assets/Media/images/how-cups.png" style="height: 150px;width: 150px" class="rounded">
+                <p style="color: white">Compétitions</p>
+            </a>
+           <!-- <mat-card class="entete"> -->
+                <!-- <mat-card-header>
+                  <mat-card-title>Pronostics</mat-card-title>
+                </mat-card-header> -->
+                <!-- <mat-card-content>
+                    <a routerLink="#">
+                        <img  src="https://via.placeholder.com/200x200" class="rounded">
+                    </a>
+                </mat-card-content> -->
+                <!-- <mat-card-footer>
+                  <mat-card-subtitle>Pronostics</mat-card-subtitle>
+                </mat-card-footer> -->
+                <!-- <mat-card-actions>
+                  <a routerLink="#"><button mat-raised-button color="info">Compétitions</button></a>
+                </mat-card-actions>
+              </mat-card> -->
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-8">
+      <mat-card class="entete">
+        <mat-card-header>
+          <mat-card-title>Prochains pronostics</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+      <mat-card class="card-home">
+        <mat-card class="event-card">
+          <h6>Football : coupe du monde</h6>
+          <mat-card-content>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+              <table class="table table-dark table-striped">
+                <tbody class="tbody">
+                  <tr *ngFor="let elt of evts">
+                    <td>{{elt.date}}</td>
+                    <td>{{elt.heure}}</td>
+                    <td>{{elt.niveau}}</td>
+                    <td>{{elt.list_acteurs[0].nom}}-{{elt.list_acteurs[1].nom}}</td>
+                    <td><button mat-button style="float:right">Pronostiquer</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="event-card">
+          <h6>Rugby : coupe du Monde</h6>
+          <mat-card-content>
+            <table class="table table-dark table-striped">
+              <tbody>
+                <tr>
+                  <td>30/8/2018</td>
+                  <td>18h30</td>
+                  <td>1/8 de finale</td>
+                  <td>NZ-Australie</td>
+                  <td><button mat-button style="float:right">Pronostiquer</button></td>
+                </tr>
+                <tr>
+                  <td>30/8/2018</td>
+                  <td>20h30</td>
+                  <td>1/8 de finale</td>
+                  <td>France-Argentine</td>
+                  <td><button mat-button style="float:right">Pronostiquer</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-card-content>
+        </mat-card>
+      </mat-card>
+
+      <mat-card class="entete">
+        <mat-card-header>
+          <mat-card-title>Derniers résultats</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+
+      <mat-card class="card-home">
+        <mat-card class="event-card">
+          <h6>Football : coupe du monde</h6>
+          <mat-card-content>
+            <table class="table table-dark table-striped">
+              <tbody>
+                <tr>
+                  <td>26/8/2018</td>
+                  <td>18h30</td>
+                  <td>1/8 de finale</td>
+                  <td>Brésil-Pérou</td>
+                  <td>2-1</td>
+                </tr>
+                <tr>
+                  <td>26/8/2018</td>
+                  <td>20h30</td>
+                  <td>Match de poule</td>
+                  <td>France-Allemagne</td>
+                  <td>4-1</td>
+                </tr>
+                <tr>
+                  <td>25/8/2018</td>
+                  <td>17h30</td>
+                  <td>Match de poule</td>
+                  <td>Japon-Nigéria</td>
+                  <td>1-1</td>
+                </tr>
+                <tr>
+                  <td>25/8/2018</td>
+                  <td>17h30</td>
+                  <td>Match de poule</td>
+                  <td>Japon-Nigéria</td>
+                  <td>1-1</td>
+                </tr>
+                <tr>
+                  <td>25/8/2018</td>
+                  <td>17h30</td>
+                  <td>Match de poule</td>
+                  <td>Japon-Nigéria</td>
+                  <td>1-1</td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-card-content>
+        </mat-card>
+      </mat-card>
+
+    </div>
+    <div class="col" style="margin-top: 10px">
+      <app-classement></app-classement>
+    </div>
+  </div>
+</div> -->
