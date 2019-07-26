@@ -34,9 +34,16 @@ export class PlayersComponent implements OnInit {
 
   }
 
-  selectPlayer(p: Player) {
+  afficherPlayers(p: Player) {
     let link = ['/players'];
     this.router.navigate(link);
+  }
+
+
+  update(id: number) {
+    this.playersService.updatePlayer(this.player)
+     .subscribe(() => this.playersService.gotoPlayersList());
+     
   }
 
   delete(id: number) {
