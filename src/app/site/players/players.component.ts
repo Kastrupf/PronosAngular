@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PlayersService } from 'src/app/services/players/players.service';
 import { Observable } from 'rxjs';
-import { Player } from 'src/app/interface/player';
+import { Player } from 'src/app/Models/player';
 
 @Component({
   selector: 'app-players',
@@ -53,5 +53,13 @@ export class PlayersComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  
+
+
+
+
+
+
  
 }

@@ -1,8 +1,9 @@
+import { PlayersService } from 'src/app/services/players/players.service';
 import { DataFormService } from './../data-form.service';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Player } from 'src/app/Models/player';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-data-form',
@@ -12,12 +13,15 @@ import { map } from 'rxjs/operators';
 export class DataFormComponent implements OnInit {
 
   formPlayer: FormGroup;
+  player: Player;
+
 
   constructor(
+    private playersService: PlayersService,
     private formBuilder: FormBuilder,
-    private http: HttpClient,
     private dataFormService: DataFormService,
-    private HttpClientModule: HttpClientModule) { }
+    private router: Router)
+     { }
 
   ngOnInit() {
 
@@ -25,38 +29,29 @@ export class DataFormComponent implements OnInit {
 
     this.formPlayer = this.formBuilder.group({
       firstName: [null, [Validators.required, Validators.maxLength(30)]],
-      lastName: [null, [Validators.required, Validators.maxLength(30)]]
-      // email: [null, [Validators.required, Validators.email], [this.verifierMail]]
+      lastName: [null, [Validators.required, Validators.maxLength(30)]],
+      mail: [null]
     });
   }
 
-  // onSubmit() {
-    
-  //   this.playersService.add(player).subscribe(
-  //     data => this.player = data
-  //     );
-  // }
-
-  // submit() {
-  //   console.log(this.formPlayer.value);
-
-  //   this.http.post('https://localhost:8081/players', JSON.stringify({}))
-  //     .subscribe(
-  //       data => {
-  //         console.log(data);
-  //       this.reset();
-  //     },
-  //     (error: any) => alert('error'));
-  // }
+  add(): void {
+    let formValue = this.formPlayer.value;
+    let player = new Player();
+    player.firstName = formValue.firstName;
+    player.lastName = formValue.lastName;
+    player.email = formValue.mail;
+    console.log(player);
+    this.playersService.addPlayer(player)
+      .subscribe(player => {
+        this.router.navigate(['/players']);
+      }, err => {
+        console.log(err);
+      });
+  }
 
   reset(){
     this.formPlayer.reset();
   }
-
-
-  // verifierMail(formControl: FormControl) {
-  //   return this.dataFormService.verifierMail(formControl.value).(map(mailExists => mailExists ? { mailInvalid: true } : null));
-  // }
 }
 
 

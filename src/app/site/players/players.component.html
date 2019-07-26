@@ -6,8 +6,7 @@
     <div class="col-sm-12">
       <button mat-button style="float:center;background-color: yellow; margin: 30px" (click)="openDialog()">Ajouter un
         Joueur</button>
- 
-      <mat-card class="entete" style="background-color: darkslategray">
+       <mat-card class="entete" style="background-color: darkslategray">
         <mat-card-header>
           <h6>Liste de Joueurs</h6>
           <div class="float-right">
@@ -25,12 +24,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor='let p of listPlayers'>
-              
-                <td>Prenom{{ p.id }}</td>
+              <tr *ngFor='let p of listPlayers'>     
+                <td>{{ p.id }}</td>
                 <td>{{ p.firstName }}</td>
                 <td>{{ p.lastName }}</td>
-                <td>{{ p.email }}</td>
+                <td>{{ p.mail }}</td>
                 <td style= "text-align : center">
                   <button mat-button style="background-color: blue" (click)="update(p.id)">Editer</button>
                 </td>
@@ -43,7 +41,6 @@
           <ng-template #loading>
             <span>Charging list de joueurs... </span>
           </ng-template>
-
         </mat-card-content>
       </mat-card>
     </div>

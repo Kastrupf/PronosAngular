@@ -1,29 +1,22 @@
 <div class="container" style="margin-top: 80px">
   <div class="row">
-    <form class="form-horizontal" [formGroup]="formPlayer" (ngSubmit)="onSubmit()">
+    <form class="form-horizontal" [formGroup]="formPlayer" (ngSubmit)="add()">
       <div class="form-group">
-       
         <h5>
           Créer/Editer Joueur
         </h5>
-       
-          <div class="col-s-6">
-            <input type="text" class="form-control" formControlName="firstName" placeholder="firstName">
-          </div>
-          <div class="col-s-6">
-            <input type="text" class="form-control" formControlName="lastName" placeholder="lastName">
-          </div>
-        
-          <div class="col-s-6">
-            <input type="text" class="form-control" formControlName="mail" id="mail" placeholder="mail">
-          </div>
-    
-
+        <div class="col-s-6">
+          <input type="text" class="form-control" formControlName="firstName" id="firstName" placeholder="firstName">
+        </div>
+        <div class="col-s-6">
+          <input type="text" class="form-control" formControlName="lastName" id="lastName" placeholder="lastName">
+        </div>
+        <div class="col-s-6">
+          <input type="text" class="form-control" formControlName="mail" id="mail" placeholder="mail">
+        </div>
         <button type="submit" class="btn btn-primary">Valider</button>
         <button class="btn btn-secondary" (click)="reset()">Annuler</button>
-
       </div>
     </form>
-
   </div>
 </div>
