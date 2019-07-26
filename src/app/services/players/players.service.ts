@@ -43,8 +43,8 @@ export class PlayersService {
     return this.http.post<Player>(`${this.playersUrl}/players`, player, this.httpOptions);
   }
 
-  public updatePlayer(player: Player): Observable<Player> {
-    return this.http.put<Player>(`${this.playersUrl}/players`, player, this.httpOptions);
+  public updatePlayer(id: number): Observable<Player> {
+    return this.http.put<Player>(`${this.playersUrl}/players/${id}`, this.httpOptions);
   }
 
   public gotoPlayersList() {

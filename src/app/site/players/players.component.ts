@@ -1,10 +1,11 @@
-import { DataFormComponent } from './data-form/data-form.component';
 import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PlayersService } from 'src/app/services/players/players.service';
 import { Observable } from 'rxjs';
 import { Player } from 'src/app/Models/player';
+import { DataFormComponent } from './data-form/data-form.component';
+import { DataUpdateFormComponent } from './data-update-form/data-update-form.component';
 
 @Component({
   selector: 'app-players',
@@ -16,7 +17,7 @@ export class PlayersComponent implements OnInit {
 
   listPlayers: Player[];
   players$: Observable<Player[]>;
-  player:Player;
+  player: Player;
   message: string;
   typeListe: number;
 
@@ -26,12 +27,10 @@ export class PlayersComponent implements OnInit {
     public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.listPlayers; //=[];
+    this.listPlayers; 
     this.playersService.list().subscribe(
       players1 => this.listPlayers = players1);
-    // this.players$ = this.playersService.list();
     this.message = 'Pas d\'Joueurs dans la liste';
-
   }
 
   afficherPlayers(p: Player) {
@@ -39,11 +38,9 @@ export class PlayersComponent implements OnInit {
     this.router.navigate(link);
   }
 
-
   update(id: number) {
-    this.playersService.updatePlayer(this.player)
-     .subscribe(() => this.playersService.gotoPlayersList());
-     
+    this.playersService.updatePlayer(id)
+      .subscribe(() => this.playersService.gotoPlayersList());
   }
 
   delete(id: number) {
@@ -54,19 +51,26 @@ export class PlayersComponent implements OnInit {
       })
   }
 
-  openDialog() {
+  openDialogAdd() {
     const dialogRef = this.dialog.open(DataFormComponent);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
 
-  
+  openDialogUpdate(id: number) {
+    const dialogRef = this.dialog.open(DataUpdateFormComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
 
 
 
 
 
- 
+
+
+
 }

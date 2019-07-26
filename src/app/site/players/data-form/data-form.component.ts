@@ -1,9 +1,8 @@
 import { PlayersService } from 'src/app/services/players/players.service';
-import { DataFormService } from './../data-form.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Player } from 'src/app/Models/player';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-data-form',
@@ -14,23 +13,18 @@ export class DataFormComponent implements OnInit {
 
   formPlayer: FormGroup;
   player: Player;
-
+  subscriptionDate: FormControl;
 
   constructor(
     private playersService: PlayersService,
-    private formBuilder: FormBuilder,
-    private dataFormService: DataFormService,
-    private router: Router)
-     { }
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-
-    this.dataFormService.verifierMail('dummy@email.com');
-
+    this.subscriptionDate = new FormControl('');
     this.formPlayer = this.formBuilder.group({
       firstName: [null, [Validators.required, Validators.maxLength(30)]],
       lastName: [null, [Validators.required, Validators.maxLength(30)]],
-      mail: [null]
+      mail: [null, [Validators.required, Validators.maxLength(30)]]
     });
   }
 
@@ -39,17 +33,17 @@ export class DataFormComponent implements OnInit {
     let player = new Player();
     player.firstName = formValue.firstName;
     player.lastName = formValue.lastName;
-    player.email = formValue.mail;
+    player.mail = formValue.mail;
     console.log(player);
     this.playersService.addPlayer(player)
       .subscribe(player => {
-        this.router.navigate(['/players']);
-      }, err => {
+        this.playersService.gotoPlayersList();
+       }, err => {
         console.log(err);
       });
   }
 
-  reset(){
+  reset() {
     this.formPlayer.reset();
   }
 }

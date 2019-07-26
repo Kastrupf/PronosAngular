@@ -1,4 +1,3 @@
-import { PlayersService } from './services/players/players.service';
 import { ContestModule } from './site/contest/contest.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -30,7 +29,7 @@ registerLocaleData(fr);
   declarations: [
     AppComponent,
     ConfirmDialogComponent,
-    
+
   ],
   imports: [
     MaterialModule,
@@ -50,7 +49,7 @@ registerLocaleData(fr);
     BrowserAnimationsModule,
     CustomMaterialModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: "fr-CA"}, PlayersService],
+  providers: [{ provide: LOCALE_ID, useValue: "fr-CA" }],
   entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })

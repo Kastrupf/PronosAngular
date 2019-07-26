@@ -11,7 +11,6 @@ export class DataFormService {
   constructor(private http: HttpClient) { }
 
   verifierMail(mail: String) {
-
     return this.http.get('Data/players.json')
       .pipe(
         delay(3000),
