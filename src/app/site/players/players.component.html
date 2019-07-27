@@ -3,17 +3,23 @@
   <div class="row">
     <div class="col">
     </div>
+
     <div class="col-sm-12">
-      <button mat-button style="float:center;background-color: rgb(186, 211, 136); margin: 30px" (click)="openDialogAdd()">Ajouter
-        un Joueur</button>
+      <button mat-button style="float:center;background-color: rgb(186, 211, 136); margin: 30px"
+        (click)="openDialogAdd()">Ajouter
+        un Joueur
+      </button>
+
       <mat-card class="entete" style="background-color: darkslategray">
         <mat-card-header>
-          <h6>Liste de Joueurs</h6>
+          <h4 >Liste de Joueurs</h4>
           <div class="float-right">
           </div>
         </mat-card-header>
+
         <mat-card-content>
-          <table class="table table-dark table-striped">
+          <table class="table table-dark table-striped" *ngIf='players$ | async as players; else loading'>
+            
             <thead>
               <tr>
                 <th>Id</th>
@@ -24,23 +30,28 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor='let p of listPlayers'>
+              <tr *ngFor='let p of players'>
                 <td>{{ p.id }}</td>
                 <td>{{ p.firstName }}</td>
                 <td>{{ p.lastName }}</td>
                 <td>{{ p.mail }}</td>
                 <td style="text-align : center">
-                  <button mat-button style="background-color: rgb(157, 157, 209)" (click)="openDialogUpdate(p.id)">Modifier</button>
+                  <button mat-button style="background-color: rgb(157, 157, 209)"
+                    (click)="openDialogUpdate(p.id)">Modifier
+                  </button>
                 </td>
                 <td style="text-align : center">
-                  <button mat-button style="background-color: rgb(170, 83, 83)" (click)="delete(p.id)">Supprimer</button>
+                  <button mat-button style="background-color: rgb(170, 83, 83)" (click)="delete(p.id)">Supprimer
+                  </button>
                 </td>
               </tr>
             </tbody>
           </table>
+
           <ng-template #loading>
-            <span>Charging list de joueurs... </span>
+            <span> Loading Liste Joueurs... </span>
           </ng-template>
+
         </mat-card-content>
       </mat-card>
     </div>

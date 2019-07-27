@@ -11,8 +11,9 @@ import { Player } from 'src/app/Models/player';
 })
 export class DataFormComponent implements OnInit {
 
-  formPlayer: FormGroup;
   player: Player;
+  listPlayers: Player[];
+  formPlayer: FormGroup;
   subscriptionDate: FormControl;
 
   constructor(
@@ -37,15 +38,21 @@ export class DataFormComponent implements OnInit {
     console.log(player);
     this.playersService.addPlayer(player)
       .subscribe(player => {
-        this.playersService.gotoPlayersList();
-       }, err => {
+        this.playersService.list().subscribe(
+          players1 => this.listPlayers = players1);
+      }, err => {
         console.log(err);
       });
   }
 
-  reset() {
-    this.formPlayer.reset();
+  delete(id: number) {
+    this.playersService.delete(id)
+      .subscribe(value => {
+        this.playersService.list().subscribe(
+          listPlayersRefresh => this.listPlayers = listPlayersRefresh);
+      },
+        err => {
+          console.log(err);
+        });
   }
 }
-
-

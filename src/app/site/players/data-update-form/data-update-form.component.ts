@@ -32,12 +32,15 @@ export class DataUpdateFormComponent implements OnInit {
   update (id: number): void {
     let formValue = this.formPlayer.value;
     let player = new Player();
+    this.playersService.getById(id).
+    subscribe(data => {
     player.firstName = formValue.firstName;
     player.lastName = formValue.lastName;
     player.mail = formValue.mail;
+    }); 
     console.log(player);
     this.playersService.addPlayer(player)
-      .subscribe(player => {
+      .subscribe(data => {
         this.playersService.gotoPlayersUpdate(id);
         // this.router.navigate(['/players']);
       }, err => {

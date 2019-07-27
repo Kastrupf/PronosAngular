@@ -15,10 +15,9 @@ import { DataUpdateFormComponent } from './data-update-form/data-update-form.com
 
 export class PlayersComponent implements OnInit {
 
-  listPlayers: Player[];
+  // listPlayers: Player[];
   players$: Observable<Player[]>;
   player: Player;
-  message: string;
   typeListe: number;
 
   constructor(
@@ -27,10 +26,9 @@ export class PlayersComponent implements OnInit {
     public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.listPlayers; 
-    this.playersService.list().subscribe(
-      players1 => this.listPlayers = players1);
-    this.message = 'Pas d\'Joueurs dans la liste';
+      // this.playersService.list().subscribe(
+    //   data => this.listPlayers = data);
+    this.players$ = this.playersService.list();
   }
 
   afficherPlayers(p: Player) {
@@ -56,6 +54,7 @@ export class PlayersComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+   
   }
 
   openDialogUpdate(id: number) {

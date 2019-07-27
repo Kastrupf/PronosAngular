@@ -6,14 +6,15 @@
           <p>Editer Joueur</p>
         </h5>
         <br>
-          <div class="col-s-6">
-          <input type="text" class="form-control" formControlName="firstName" id="firstName" placeholder="firstName">
+          <div class="col-s-6" >
+          <input type="text" class="form-control" formControlName="firstName" id="firstName" >
+          <span>{{ player.firstName }}</span>
         </div>
         <div class="col-s-6">
-          <input type="text" class="form-control" formControlName="lastName" id="lastName" placeholder="lastName">
+          <input type="text" class="form-control" formControlName="lastName" id="lastName">
         </div>
         <div class="col-s-6">
-          <input type="text" class="form-control" formControlName="mail" id="mail" placeholder="mail">
+          <input type="text" class="form-control" formControlName="mail" id="mail">
         </div>
         <button type="submit" class="btn btn-primary">Valider</button>
         <button class="btn btn-secondary" (click)="reset()">Annuler</button>

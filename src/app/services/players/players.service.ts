@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Player } from 'src/app/Models/player';
+import { tap, delay } from 'rxjs/operators';
 
 
 @Injectable({
@@ -28,7 +29,10 @@ export class PlayersService {
   }
 
   public list(): Observable<Player[]> {
-    return this.http.get<Player[]>(`${this.playersUrl}/players`, this.httpOptions);
+    return this.http.get<Player[]>(`${this.playersUrl}/players`, this.httpOptions).
+    pipe(delay(2000),tap
+    (console.log)
+    );
   }
 
   public getById(id: number): Observable<Player> {
