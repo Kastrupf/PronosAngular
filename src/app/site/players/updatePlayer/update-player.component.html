@@ -1,13 +1,13 @@
 <div class="container" style="margin-top: 10px">
   <div class="row">
-    <form class="form-horizontal" [formGroup]="formUpdatePlayer" (ngSubmit)="update()">
+    <form class="form-horizontal" [formGroup]="formPlayer" (ngSubmit)="onUpdate()">
       <div class="form-group">
         <h5>
           <p>Editer Joueur</p>
         </h5>
         <br>
-          <div class="col-s-6" >
-          <input type="text" class="form-control" formControlName="firstName" id="firstName" >
+        <div class="col-s-6">
+          <input type="text" class="form-control" formControlName="firstName" id="firstName">
           <span>{{ player.firstName }}</span>
         </div>
         <div class="col-s-6">
@@ -16,8 +16,8 @@
         <div class="col-s-6">
           <input type="text" class="form-control" formControlName="mail" id="mail">
         </div>
-        <button type="submit" class="btn btn-primary">Valider</button>
-        <button class="btn btn-secondary" (click)="reset()">Annuler</button>
+        <button type="submit"  class="btn btn-primary" routerLink="/players">Valider</button>
+        <button class="btn btn-secondary"  (click)="onReset()">Annuler</button>
       </div>
     </form>
   </div>

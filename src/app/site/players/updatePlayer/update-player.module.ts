@@ -2,22 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from 'src/app/services/auth/auth.guard';
-import { DataUpdateFormComponent } from './data-update-form.component';
+import { UpdatePlayerComponent } from './update-player.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
   const routes: Routes = [
-    { path: 'players/updateForm', canActivate: [AuthGuard], component: DataUpdateFormComponent }
+    { path: 'playersUpdate', canActivate: [AuthGuard], component: UpdatePlayerComponent }
   ];
   
   @NgModule({
-    declarations: [DataUpdateFormComponent],
+    declarations: [UpdatePlayerComponent],
     imports: [
       CommonModule,
       ReactiveFormsModule,
       HttpClientModule,
       RouterModule.forChild(routes)
       ],
-      exports:[CommonModule,DataUpdateFormComponent]
+      exports:[CommonModule,UpdatePlayerComponent]
   })
 export class DataUpddateFormModule { }

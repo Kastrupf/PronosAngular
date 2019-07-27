@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { DataFormComponent } from './data-form.component';
+import { CreatePlayerComponent } from './create-player.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -8,18 +8,18 @@ import { AuthGuard } from 'src/app/services/auth/auth.guard';
 
 
 const routes: Routes = [
-  { path: 'players/form', canActivate: [AuthGuard], component: DataFormComponent }
+  { path: 'playersCreate', canActivate: [AuthGuard], component: CreatePlayerComponent }
 ];
 
 
 @NgModule({
-  declarations: [DataFormComponent],
+  declarations: [CreatePlayerComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forChild(routes)
     ],
-    exports:[CommonModule,DataFormComponent]
+    exports:[CommonModule,CreatePlayerComponent]
 })
-export class DataFormModule { }
+export class CreatePlayerModule { }

@@ -24,12 +24,12 @@ import { registerLocaleData } from '@angular/common';
 import { PlayersModule } from './site/players/players.module';
 import { EvenementsModule } from './site/evenements/evenements.module';
 
+
 registerLocaleData(fr);
 @NgModule({
   declarations: [
     AppComponent,
-    ConfirmDialogComponent,
-
+    ConfirmDialogComponent
   ],
   imports: [
     MaterialModule,

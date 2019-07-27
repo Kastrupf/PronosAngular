@@ -8,8 +8,8 @@ import { PlayersComponent } from './players.component';
 import { MaterialModule } from '../material/material.module';
 import {MatDialogModule} from "@angular/material";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DataFormModule } from './data-form/data-form.module';
-import { DataUpddateFormModule } from './data-update-form/data-upddate-form.module';
+import { CreatePlayerModule } from './createPlayer/create-player.module';
+import { DataUpddateFormModule } from './updatePlayer/update-player.module';
 
 const routes: Routes = [
   { path: 'players', canActivate: [AuthGuard], component: PlayersComponent }
@@ -22,7 +22,7 @@ const routes: Routes = [
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    DataFormModule,
+    CreatePlayerModule,
     DataUpddateFormModule,    
     HttpClientModule,    
     MatDialogModule,

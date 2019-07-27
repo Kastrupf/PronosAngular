@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataFormComponent } from './data-form.component';
+import { AlertModalComponent } from './alert-modal.component';
 
-describe('DataFormComponent', () => {
-  let component: DataFormComponent;
-  let fixture: ComponentFixture<DataFormComponent>;
+describe('AlertModalComponent', () => {
+  let component: AlertModalComponent;
+  let fixture: ComponentFixture<AlertModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataFormComponent ]
+      declarations: [ AlertModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataFormComponent);
+    fixture = TestBed.createComponent(AlertModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

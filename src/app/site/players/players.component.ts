@@ -2,10 +2,11 @@ import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PlayersService } from 'src/app/services/players/players.service';
-import { Observable } from 'rxjs';
+import { Observable, empty, Subject } from 'rxjs';
 import { Player } from 'src/app/Models/player';
-import { DataFormComponent } from './data-form/data-form.component';
-import { DataUpdateFormComponent } from './data-update-form/data-update-form.component';
+import { CreatePlayerComponent } from './createPlayer/create-player.component';
+import { UpdatePlayerComponent } from './updatePlayer/update-player.component';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-players',
@@ -15,10 +16,11 @@ import { DataUpdateFormComponent } from './data-update-form/data-update-form.com
 
 export class PlayersComponent implements OnInit {
 
-  // listPlayers: Player[];
+  listPlayers: Player[];
   players$: Observable<Player[]>;
   player: Player;
   typeListe: number;
+  error$ = new Subject<boolean>();
 
   constructor(
     private router: Router,
@@ -26,50 +28,55 @@ export class PlayersComponent implements OnInit {
     public dialog: MatDialog) { }
 
   ngOnInit() {
-      // this.playersService.list().subscribe(
+    // this.playersService.list().subscribe(
     //   data => this.listPlayers = data);
-    this.players$ = this.playersService.list();
+    this.players$ = this.playersService.getAll().
+      pipe(
+        catchError(error => {
+          console.error(error);
+          this.error$.next(true);
+          return empty();
+        })
+      );
   }
 
-  afficherPlayers(p: Player) {
-    let link = ['/players'];
-    this.router.navigate(link);
+  onGetAll() {
+    this.playersService.getAll()
+    .subscribe(data=>{
+      this.listPlayers=data;
+    },err=>{
+      console.log(err);
+    });
+    this.playersService.gotoPlayersList;
+    // let link = ['/players'];
+    // this.router.navigate(link);
   }
-
-  update(id: number) {
-    this.playersService.updatePlayer(id)
+  
+  onUpdate(id: number) {
+    this.playersService.update(id)
       .subscribe(() => this.playersService.gotoPlayersList());
   }
 
-  delete(id: number) {
-    this.playersService.delete(id).subscribe(
-      value => {
-        this.playersService.list().subscribe(
-          players1 => this.listPlayers = players1);
-      })
+  onDelete(id: number) {
+    this.playersService.delete(id)
+      .subscribe(value => {
+        this.playersService.getAll()
+          .subscribe(
+            listPlayersRefresh => this.listPlayers = listPlayersRefresh);
+      });
   }
 
-  openDialogAdd() {
-    const dialogRef = this.dialog.open(DataFormComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-   
-  }
-
-  openDialogUpdate(id: number) {
-    const dialogRef = this.dialog.open(DataUpdateFormComponent);
+  onOpenDialogAdd() {
+    const dialogRef = this.dialog.open(CreatePlayerComponent);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
 
-
-
-
-
-
-
-
-
+  onOpenDialogUpdate(id: number) {
+    const dialogRef = this.dialog.open(UpdatePlayerComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
